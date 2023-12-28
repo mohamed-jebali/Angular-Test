@@ -2,3 +2,17 @@
 <a class="text-danger" href="" [routerLink]="['create']">
     Create Profile
 </a>
+
+<div class="cars-container">
+    <div *ngFor="let car of cars">
+        {{ car.model }} {{car.age}} {{car.fuel}}
+        <div class="car-functions">
+            {{car.engineStatus}} 
+            <p *ngIf="car.model === 'Audi'">
+                <button class="btn btn-warning me-3" (click)="car.startEngine()">Start Engine</button>
+                <button class="btn btn-danger" (click)="car.stopEngine()">Stop Engine</button>
+            </p>
+        </div>
+    </div>
+    
+</div>
