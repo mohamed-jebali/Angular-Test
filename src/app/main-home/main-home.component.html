@@ -1,18 +1,21 @@
-<p>main-home works!</p>
-<a class="text-danger" href="" [routerLink]="['create']">
-    Create Profile
-</a>
-
-<div class="cars-container">
-    <div *ngFor="let car of cars">
-        {{ car.model }} {{car.age}} {{car.fuel}}
-        <div class="car-functions">
-            {{car.engineStatus}} 
-            <p *ngIf="car.model === 'Audi'">
-                <button class="btn btn-warning me-3" (click)="car.startEngine()">Start Engine</button>
-                <button class="btn btn-danger" (click)="car.stopEngine()">Stop Engine</button>
+<div class="cars-container container">
+    <div class="row justify-content-between">
+        <div *ngFor="let student of listStudents" class="list text-black py-2 me-3 col-3 mb-3 flex-column">
+            <p class="name">
+               <strong>Name :</strong> {{ student.name }}
             </p>
-        </div>
+            <p class="address">
+                <strong>Address :</strong> {{ student.email }}
+            </p>
+            <p class="date-of-birth">
+                <strong>Date of Birth :</strong> {{ student.dateOfBirth }}
+            </p>
+            <p class="age">
+                <strong>Age :</strong> {{ student.age }}
+            </p>
+            <button class="btn btn-dark">
+                Details
+            </button>
     </div>
-    
+    </div>
 </div>
