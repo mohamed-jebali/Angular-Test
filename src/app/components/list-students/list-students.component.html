@@ -1,0 +1,20 @@
+
+	<div class="row justify-content-center text-white bg-secondary">
+		<div class="col-4" *ngFor="let student of listStudents; let index=index">
+			<card  [student]="student"></card>
+			<button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-4 mt-5">
+			<button class="btn btn-primary mb-4" (click)="userSettings()">User Settings</button><br>
+			<img *ngIf="utenteInfo != null" [src]="userImage" alt="immagine utente" style="margin-bottom: 0.5rem;">
+			<div *ngIf="utenteInfo != null" class="user-info">
+				Benvenuto : {{  utenteInfo }}
+				<div>
+					compenso:  {{ stipendio | currency: '€' }}
+				</div>
+			</div>
+			
+		</div>
+	</div>
